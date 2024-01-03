@@ -32,16 +32,25 @@ Bureaucrat::Bureaucrat(const Bureaucrat &bureaucrat)
     }
 }
 
+Bureaucrat&	Bureaucrat::operator=(const Bureaucrat& ref) {
+  if (this != &ref) {
+    /* insert */
+    *(const_cast<std::string*>(&_name)) = ref.getName();
+    this->_grade = ref.getGrade();
+  }
+  return *this;
+}
+
 Bureaucrat::~Bureaucrat() 
 {
 }
 
-const std::string& Bureaucrat::getName() const 
+const std::string Bureaucrat::getName() const 
 {
   return this->_name;
 }
 
-const int& Bureaucrat::getGrade() const 
+const int Bureaucrat::getGrade() const 
 {
   return this->_grade;
 }

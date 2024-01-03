@@ -3,33 +3,41 @@
 
 #include <iostream>
 #include <string>
+#include "Bureaucrat.hpp"
+
+// class Bureaucrat;
 
 class Form
 {
 public:
     Form(void);
-
-    Form(std::string name, int grade);
-
-    Form(const Form &bur1eaucrat);
+    Form(const std::string name, const int signGrade, const int executeGrade);
+    Form(const Form &bureaucrat);
     Form &operator=(const Form &ref);
     virtual ~Form();
 
-    
-    class GradeTooHighException : public std::exception {
-        public:
-            const char* what() const throw();
+    class GradeTooHighException : public std::exception
+    {
+    public:
+        const char *what() const throw();
+    };
+    class GradeTooLowException : public std::exception
+    {
+    public:
+        const char *what() const throw();
     };
 
-    class GradeTooLowException : public std::exception {
-        public:
-            const char* what() const throw();
-    };
+    const std::string getName() const; // const 는 이 함수에서 변경하지 않겠다는것 의미.
+    bool getSigned() const;
+    int getSignGrade() const;
+    int getExecGrade() const;
+    void beSigned(Bureaucrat bureaucrat);
 
 private:
     const std::string _name;
-    int _grade;
-
+    bool _signed;
+    const int _signGrade;
+    const int _execGrade;
 };
 
 #endif
