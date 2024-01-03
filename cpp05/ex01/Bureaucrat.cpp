@@ -88,7 +88,7 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
   return "Grade is too low.";
 }
 
-void Bureaucrat::signForm(Form form) const
+void Bureaucrat::signForm(Form &form) const // 주소로 말고 값으로 전달해서 복사본이 전달되었었음.
 {
   try
   {

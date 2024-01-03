@@ -30,28 +30,29 @@ Form::~Form() {}
 
 const std::string Form::getName() const
 {
-  return _name;
+  return this->_name;
 }
 
 bool Form::getSigned() const
 {
-  return _signed;
+  return this->_signed;
 }
 
 int Form::getSignGrade() const
 {
-  return _signGrade;
+  return this->_signGrade;
 }
 
 int Form::getExecGrade() const
 {
-  return _execGrade;
+  return this->_execGrade;
 }
 
 void Form::beSigned(Bureaucrat bureaucrat)
 {
   if (bureaucrat.getGrade() <= this->getSignGrade())
   {
+    std::cout << "Signing Form ...\n";
     this->_signed = true;
   }
   else
