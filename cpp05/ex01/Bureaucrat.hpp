@@ -17,7 +17,7 @@ public:
 
     Bureaucrat(const Bureaucrat &bur1eaucrat);
     Bureaucrat &operator=(const Bureaucrat &ref);
-    virtual ~Bureaucrat();
+    ~Bureaucrat();
 
     const std::string getName() const;
     int getGrade() const;
