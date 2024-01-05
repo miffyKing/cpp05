@@ -2,7 +2,7 @@
 
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
-// #include "PresidentialPardonForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 Intern::Intern()
 {
@@ -50,9 +50,9 @@ AForm *Intern::makeForm(std::string formName, std::string target)
   case 1:
     std::cout << "Intern creates " << formName << " form" << std::endl;
     return (new RobotomyRequestForm(target));
-  // case 2 :
-  //	std::cout << "Intern creates " << formName << " form" << std::endl;
-  //	return (new PresidentialPardonForm(target));
+  case 2 :
+  	std::cout << "Intern creates " << formName << " form" << std::endl;
+  	return (new PresidentialPardonForm(target));
   default:
     std::cout << "check form name" << std::endl;
   }
