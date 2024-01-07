@@ -10,7 +10,7 @@ endif
 NAME		=	a.out
 FOLDER		=	./
 HEADER		=	./
-SRC_LIST	=	main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp
+SRC_LIST	=	main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 SRC			=	$(addprefix $(FOLDER), $(SRC_LIST))
 OBJ			=	$(SRC:%.cpp=%.o)
 

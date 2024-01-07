@@ -2,9 +2,11 @@
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
+
 #include <iostream>
 
-void shrubberyTest(Bureaucrat b1, Bureaucrat b4)
+void shrubberyTest(Bureaucrat b1, Bureaucrat b4)  //1,140
 {
   std::cout << "ShrubberyCreateForm test" << std::endl;
   AForm *f1 = new ShrubberyCreationForm("Christmas");
@@ -39,11 +41,11 @@ void robotomyTest(Bureaucrat b1, Bureaucrat b3) // 1,140
 
   std::cout << std::endl;
   std::cout << std::endl;
-  std::cout << "Grade 70, can sign Robotomy?" << std::endl;
+  std::cout << "Grade 20, can sign Robotomy?" << std::endl;
   b3.signForm(*f1);
   std::cout << std::endl;
 
-  std::cout << "Grade 70, can execute Robotomy?" << std::endl;
+  std::cout << "Grade 20, can execute Robotomy?" << std::endl;
   b3.executeForm(*f1);
   std::cout << std::endl;
 
@@ -58,17 +60,49 @@ void robotomyTest(Bureaucrat b1, Bureaucrat b3) // 1,140
   delete f2;
 }
 
+void presidentialTest(Bureaucrat b1, Bureaucrat b2)
+{
+  std::cout << "PresidentialForm test" << std::endl;
+  AForm *f1 = new PresidentialPardonForm("f1");
+  AForm *f2 = new PresidentialPardonForm("f2");
+  // RobotomyRequestForm *f3 = new ShrubberyCreationForm("f3");
+
+  std::cout << std::endl;
+  std::cout << std::endl;
+  std::cout << "Grade 70, can sign Presidential?" << std::endl;
+  b2.signForm(*f1);
+  std::cout << std::endl;
+
+  std::cout << "Grade 70, can execute Presidential?" << std::endl;
+  b2.executeForm(*f1);
+  std::cout << std::endl;
+
+  std::cout << "Not signed, can execute Presidential?" << std::endl;
+  b1.executeForm(*f2);
+  std::cout << std::endl;
+  
+  b1.signForm(*f2);
+  std::cout << "Signed, can execute Presidential?" << std::endl;
+  
+  b1.executeForm(*f2);
+
+  delete f1;
+  delete f2;
+}
+
 int main(void)
 {
   Bureaucrat yback("yback", 1);
   Bureaucrat ejae("ejae", 140);
-  // shrubberyTest(b1, b4);
+  // shrubberyTest(yback, ejae);
 
-  Bureaucrat bcho("bcho", 1);
-  Bureaucrat dayun("dayun", 70);
-  robotomyTest(bcho, dayun);
+  Bureaucrat bcho("bcho", 1);    // 사인, 실행 가능
+  Bureaucrat dayun("dayun", 70); // 사인 가능, 실행 불가능
+  // robotomyTest(bcho, dayun);
 
-  
+  Bureaucrat gsong("gsong", 1);      // 사인, 실행 가능
+  Bureaucrat sungsoo("sungsoo", 20); // 사인 가능, 실행 불가능
+  presidentialTest(gsong, sungsoo);
 
   system("leaks a.out");
   return 0;

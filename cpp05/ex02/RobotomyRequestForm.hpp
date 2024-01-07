@@ -24,6 +24,7 @@ public:
   ~RobotomyRequestForm();
 
   void execute(const Bureaucrat &bureaucrat) const;
+  std::string getTarget() const;
 };
 
 #endif // Robot_HPP

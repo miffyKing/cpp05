@@ -2,8 +2,8 @@
 
 const std::string ShrubberyCreationForm::_treeOfAscii = "\
   ,      ,      ,,   ,\n\
-      ,        ,     ,\n\
-,         *       ,   \n\
+      ,  *      ,     ,\n\
+,       * *       ,   \n\
     o *  * * *  ,     ,\n\
   * **o * . * **    ,\n\
   **|*** . . * **     ,\n\
@@ -35,8 +35,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 {
   if (this != &ref)
   {
-    dynamic_cast<AForm &>(*this) = dynamic_cast<const AForm &>(ref);
-    this->_target = ref._target;
+    this->_target = ref.getTarget();
   }
   return *this;
 }
@@ -44,6 +43,11 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 }
+
+std::string ShrubberyCreationForm::getTarget() const
+{
+  return this->_target;
+};
 
 void ShrubberyCreationForm::execute(const Bureaucrat &bureaucrat) const
 {

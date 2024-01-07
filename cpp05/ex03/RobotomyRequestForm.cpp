@@ -19,8 +19,7 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &r
 {
   if (this != &ref)
   {
-    dynamic_cast<AForm &>(*this) = dynamic_cast<const AForm &>(ref);
-    this->_target = ref._target;
+    this->_target = ref.getTarget();
   }
   return *this;
 }
@@ -44,3 +43,8 @@ void RobotomyRequestForm::execute(const Bureaucrat &bureaucrat) const
     std::cout << this->_target << " has been robotomized failure." << std::endl;
   }
 }
+
+std::string RobotomyRequestForm::getTarget() const
+{
+  return this->_target;
+};

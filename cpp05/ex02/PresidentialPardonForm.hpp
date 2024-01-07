@@ -22,6 +22,7 @@ public:
   ~PresidentialPardonForm();
 
   void execute(const Bureaucrat &bureaucrat) const;
+  std::string getTarget() const;
 };
 
 #endif

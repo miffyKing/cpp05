@@ -1,5 +1,5 @@
 
-#include "PresidentialPardomForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm() : AForm("Presidential", 25, 5), _target("noTarget")
 {
@@ -22,8 +22,7 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
   if (this == &ref)
     return (*this);
   // 캐스팅해서 넣기
-  dynamic_cast<AForm &>(*this) = dynamic_cast<const AForm &>(ref);
-  this->_target = ref._target;
+  this->_target = ref.getTarget();
   return (*this);
 }
 
@@ -32,3 +31,8 @@ void PresidentialPardonForm::execute(const Bureaucrat &bureaucrat) const
   this->isExecutable(bureaucrat);
   std::cout << this->_target << " has been pardoned by Zafod Beeblebrox." << std::endl;
 }
+
+std::string PresidentialPardonForm::getTarget() const
+{
+  return this->_target;
+};
