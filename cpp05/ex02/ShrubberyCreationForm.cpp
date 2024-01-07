@@ -52,7 +52,7 @@ std::string ShrubberyCreationForm::getTarget() const
 void ShrubberyCreationForm::execute(const Bureaucrat &bureaucrat) const
 {
   this->isExecutable(bureaucrat);
-  std::ofstream writeFile(_target + "_shrubbery", std::ios::out | std::ios::app);
+  std::ofstream writeFile((_target + "_shrubbery").c_str(), std::ios::out | std::ios::app);
   if (writeFile.is_open())
   {
     writeFile << this->_treeOfAscii;

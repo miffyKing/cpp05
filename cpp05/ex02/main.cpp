@@ -94,7 +94,7 @@ int main(void)
 {
   Bureaucrat yback("yback", 1);
   Bureaucrat ejae("ejae", 140);
-  // shrubberyTest(yback, ejae);
+   shrubberyTest(yback, ejae);
 
   Bureaucrat bcho("bcho", 1);    // 사인, 실행 가능
   Bureaucrat dayun("dayun", 70); // 사인 가능, 실행 불가능
