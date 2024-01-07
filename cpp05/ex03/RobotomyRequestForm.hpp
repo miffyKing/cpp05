@@ -5,6 +5,7 @@
 #include <string>
 #include <iomanip>
 #include "AForm.hpp"
+#include <ctime>
 
 class RobotomyRequestForm : public AForm
 {
