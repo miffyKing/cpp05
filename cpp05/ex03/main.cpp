@@ -114,6 +114,6 @@ int main(void)
   Bureaucrat sungsoo("sungsoo", 20); // 사인 가능, 실행 불가능
   presidentialTest(gsong, sungsoo);
 
-  system("leaks a.out");
+  // system("leaks a.out");
   return 0;
 }

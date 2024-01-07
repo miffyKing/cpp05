@@ -6,7 +6,7 @@
 
 #include <iostream>
 
-void shrubberyTest(Bureaucrat b1, Bureaucrat b4)  //1,140
+void shrubberyTest(Bureaucrat b1, Bureaucrat b4) // 1,140
 {
   std::cout << "ShrubberyCreateForm test" << std::endl;
   AForm *f1 = new ShrubberyCreationForm("Christmas");
@@ -80,10 +80,10 @@ void presidentialTest(Bureaucrat b1, Bureaucrat b2)
   std::cout << "Not signed, can execute Presidential?" << std::endl;
   b1.executeForm(*f2);
   std::cout << std::endl;
-  
+
   b1.signForm(*f2);
   std::cout << "Signed, can execute Presidential?" << std::endl;
-  
+
   b1.executeForm(*f2);
 
   delete f1;
@@ -104,6 +104,6 @@ int main(void)
   Bureaucrat sungsoo("sungsoo", 20); // 사인 가능, 실행 불가능
   presidentialTest(gsong, sungsoo);
 
-  system("leaks a.out");
+  // system("leaks a.out");
   return 0;
 }
