@@ -13,7 +13,7 @@ void shrubberyTest(Bureaucrat b1, Bureaucrat b4)
   // AForm *f2 = new ShrubberyCreationForm("Tree");
 
   Intern dayhyuk;
-  AForm *f1 = dayhyuk.makeForm("shrubbery creation", "f3");
+  AForm *f1 = dayhyuk.makeForm("shrucreation", "f3");
   AForm *f2 = dayhyuk.makeForm("shrubbery creation", "f4");
 
   std::cout << std::endl;
@@ -102,18 +102,25 @@ void presidentialTest(Bureaucrat b1, Bureaucrat b2)
 
 int main(void)
 {
-  Bureaucrat yback("yback", 1);
-  Bureaucrat ejae("ejae", 140);
-  // shrubberyTest(yback, ejae);
+  try
+  {
+    Bureaucrat yback("yback", 1);
+    Bureaucrat ejae("ejae", 140);
+    shrubberyTest(yback, ejae);
+    
+    Bureaucrat bcho("bcho", 1);    // 사인, 실행 가능
+    Bureaucrat dayun("dayun", 70); // 사인 가능, 실행 불가능
+    robotomyTest(bcho, dayun);
 
-  Bureaucrat bcho("bcho", 1);    // 사인, 실행 가능
-  Bureaucrat dayun("dayun", 70); // 사인 가능, 실행 불가능
-  robotomyTest(bcho, dayun);
+    Bureaucrat gsong("gsong", 1);      // 사인, 실행 가능
+    Bureaucrat sungsoo("sungsoo", 20); // 사인 가능, 실행 불가능
+    presidentialTest(gsong, sungsoo);
 
-  Bureaucrat gsong("gsong", 1);      // 사인, 실행 가능
-  Bureaucrat sungsoo("sungsoo", 20); // 사인 가능, 실행 불가능
-  presidentialTest(gsong, sungsoo);
-
+  }
+  catch (const Intern::WrongNameException &e)
+  {
+    std::cerr << "WrongNameException orrured \n";
+  }  
   // system("leaks a.out");
   return 0;
 }

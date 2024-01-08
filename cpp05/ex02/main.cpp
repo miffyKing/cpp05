@@ -94,15 +94,15 @@ int main(void)
 {
   Bureaucrat yback("yback", 1);
   Bureaucrat ejae("ejae", 140);
-   shrubberyTest(yback, ejae);
+  //shrubberyTest(yback, ejae);
 
   Bureaucrat bcho("bcho", 1);    // 사인, 실행 가능
   Bureaucrat dayun("dayun", 70); // 사인 가능, 실행 불가능
-  // robotomyTest(bcho, dayun);
+  robotomyTest(bcho, dayun);
 
   Bureaucrat gsong("gsong", 1);      // 사인, 실행 가능
   Bureaucrat sungsoo("sungsoo", 20); // 사인 가능, 실행 불가능
-  presidentialTest(gsong, sungsoo);
+  //presidentialTest(gsong, sungsoo);
 
   // system("leaks a.out");
   return 0;

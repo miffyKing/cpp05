@@ -53,4 +53,6 @@ private:
     const int _execGrade;
 };
 
+std::ostream &operator<<(std::ostream &os, const AForm &aform);
+
 #endif

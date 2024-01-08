@@ -88,3 +88,9 @@ const char *AForm::CouldNotExecuteException::what() const throw()
 {
   return "Could not execute. Grade Too Low";
 }
+
+std::ostream &operator<<(std::ostream &os, const AForm &aform)
+{
+    os << "AForm: " << aform.getName() << " " << aform.getSigned() << " " << aform.getExecGrade() << aform.getSignGrade();
+    return os;
+}

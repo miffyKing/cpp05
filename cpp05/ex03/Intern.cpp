@@ -34,6 +34,11 @@ Intern::~Intern()
 {
 }
 
+const char *Intern::WrongNameException::what() const throw()
+{
+  return "Input name is Wrong.";
+}
+
 AForm *Intern::makeForm(std::string formName, std::string target)
 {
   int i;
@@ -55,6 +60,7 @@ AForm *Intern::makeForm(std::string formName, std::string target)
   	return (new PresidentialPardonForm(target));
   default:
     std::cout << "check form name" << std::endl;
+    throw WrongNameException();
   }
   return (NULL);
 }

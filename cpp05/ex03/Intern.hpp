@@ -18,6 +18,12 @@ public:
   ~Intern();
 
   AForm *makeForm(std::string formName, std::string target);  //AForm 으ㅣ 포인터를 리턴하는 함수
+
+  class WrongNameException : public std::exception
+  {
+  public:
+      const char *what() const throw();
+  };
 };
 
 #endif

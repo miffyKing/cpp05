@@ -7,7 +7,7 @@ int main()
     std::cout<<"test start \n";
 
     Bureaucrat bu1("name1", 3);
-
+    std::cout<< bu1 << "\n";
     try
     {
          bu1.incrementGrade();

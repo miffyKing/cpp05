@@ -1,4 +1,6 @@
 #include "RobotomyRequestForm.hpp"
+#include <cstdlib> // For rand() function
+#include <ctime>   // For std::time function
 
 RobotomyRequestForm::RobotomyRequestForm()
     : AForm("robotomy", 72, 45), _target("noTarget")
@@ -32,9 +34,9 @@ void RobotomyRequestForm::execute(const Bureaucrat &bureaucrat) const
 {
   this->isExecutable(bureaucrat);
   std::cout << "DRILL" << std::endl;
-
-  std::time_t currentTime = std::time(NULL);
-  if (currentTime % 2 == 0)
+  std::srand(std::time(nullptr));
+  
+  if (std::rand() % 2 == 0)
   {
     std::cout << this->_target << " has been robotomized successfully " << std::endl;
   }
